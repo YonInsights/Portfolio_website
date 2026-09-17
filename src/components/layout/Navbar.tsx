@@ -14,17 +14,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactWithService }) => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = [
-        'home', 'snapshot', 'about', 'expertise', 'projects', 
-        'featured-highway', 'data-ai', 'visualization', 'experience', 
-        'research', 'freelance', 'contact'
-      ];
+      const sections = ['home', 'snapshot', 'hub', 'testimonials', 'contact'];
       
       const current = sections.find(section => {
         const el = document.getElementById(section);
         if (el) {
           const rect = el.getBoundingClientRect();
-          return rect.top <= 120 && rect.bottom >= 120;
+          return rect.top <= 140 && rect.bottom >= 140;
         }
         return false;
       });
@@ -37,15 +33,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContactWithService }) => {
 
   const navItems = [
     { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Expertise', href: '#expertise' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Featured Highway', href: '#featured-highway' },
-    { label: 'Data & AI', href: '#data-ai' },
-    { label: '3D Viz', href: '#visualization' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Research', href: '#research' },
-    { label: 'Freelance', href: '#freelance' },
+    { label: 'What I Deliver', href: '#snapshot' },
+    { label: 'Portfolio Explorer', href: '#hub' },
+    { label: 'Endorsements', href: '#testimonials' },
     { label: 'Contact', href: '#contact' },
   ];
 

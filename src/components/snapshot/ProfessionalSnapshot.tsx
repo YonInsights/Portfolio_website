@@ -1,106 +1,188 @@
-import React from 'react';
-import { Compass, Map, Layers, BarChart3, Cpu, CheckCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Compass, Map, Layers, Cpu, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+interface DisciplineService {
+  id: string;
+  title: string;
+  projectCount: string;
+  icon: React.ElementType;
+  iconBg: string;
+  iconColor: string;
+  summary: string;
+  capabilities: string[];
+}
+
+const servicesList: DisciplineService[] = [
+  {
+    id: 'highway',
+    title: 'Highway & Geometric Design',
+    projectCount: '5+ Projects',
+    icon: Compass,
+    iconBg: 'bg-[#005C5C]/10',
+    iconColor: 'text-[#005C5C]',
+    summary: 'Full horizontal & vertical alignment geometry, superelevation transitions, cross-sections, drainage culverts, and earthwork quantity takeoff.',
+    capabilities: [
+      'AASHTO & ERA Standards Compliance',
+      'Corridor Assemblies & Daylight Grading',
+      'Roundabouts & Interchange Geometry',
+      'Drainage Hydraulics & Catchment Sizing'
+    ]
+  },
+  {
+    id: 'gis',
+    title: 'GIS & Spatial Infrastructure Analytics',
+    projectCount: '3+ Projects',
+    icon: Map,
+    iconBg: 'bg-[#078F91]/10',
+    iconColor: 'text-[#078F91]',
+    summary: 'Terrain DTM modeling, watershed catchment delineation, multi-criteria route corridor evaluation, and network vulnerability analysis.',
+    capabilities: [
+      'ArcGIS Pro & QGIS Spatial Analyst',
+      'Terrain DEM Slope & Hazard Mapping',
+      'Network Routing & Accessibility Isochrones',
+      'PostGIS Spatial Database Workflows'
+    ]
+  },
+  {
+    id: '3d-viz',
+    title: '3D Visualization & Digital BIM',
+    projectCount: '3+ Projects',
+    icon: Layers,
+    iconBg: 'bg-[#08B9BD]/15',
+    iconColor: 'text-[#005C5C]',
+    summary: 'Parametric Civil 3D corridor solids, InfraWorks contextual models, and cinematic 3D video walkthroughs for stakeholder reviews.',
+    capabilities: [
+      'Civil 3D Subassembly Composer',
+      'InfraWorks Digital Twin Modeling',
+      'Clash Detection & Clearance Reports',
+      '4K Presentation Video Renders'
+    ]
+  },
+  {
+    id: 'data-ml',
+    title: 'Data Analytics & Transportation AI',
+    projectCount: '4+ Projects',
+    icon: Cpu,
+    iconBg: 'bg-[#005C5C]/10',
+    iconColor: 'text-[#078F91]',
+    summary: 'Machine learning for traffic congestion forecasting, automated BOQ quantity takeoff scripting, and spatial origin-destination mobility analytics.',
+    capabilities: [
+      'LSTM & XGBoost Congestion Models',
+      'Python & SQL Data Pipelines',
+      'Automated BOQ Extraction Scripts',
+      'Pavement Condition Index (PCI) ML'
+    ]
+  }
+];
 
 export const ProfessionalSnapshot: React.FC = () => {
-  const cards = [
-    {
-      title: 'Highway Engineering',
-      icon: Compass,
-      color: '#005C5C',
-      description: 'Geometric design of horizontal/vertical alignments, superelevation transitions, intersections, roundabouts, and drainage hydraulics complying with AASHTO & ERA manuals.',
-      tags: ['Civil 3D', 'AASHTO / ERA', 'Plan & Profile', 'BOQ Takeoff']
-    },
-    {
-      title: 'GIS & Spatial Analysis',
-      icon: Map,
-      color: '#078F91',
-      description: 'Digital elevation model (DEM) processing, multi-criteria route corridor suitability, watershed catchment delineation, and network connectivity modeling.',
-      tags: ['ArcGIS Pro', 'QGIS', 'Terrain Modeling', 'PostGIS']
-    },
-    {
-      title: '3D Visualization & BIM',
-      icon: Layers,
-      color: '#08B9BD',
-      description: 'Multi-baseline corridor 3D modeling, parametric assemblies, photorealistic presentation renders, driver perspective simulations, and clash detection.',
-      tags: ['Civil 3D Solids', 'InfraWorks', 'Twinmotion', 'Visual Impact']
-    },
-    {
-      title: 'Data Analytics',
-      icon: BarChart3,
-      color: '#005C5C',
-      description: 'Exploratory traffic analysis, Origin-Destination commuter flow matrices, automated quantity takeoff scripts, and relational SQL database modeling.',
-      tags: ['Python (Pandas)', 'SQL', 'Excel VBA', 'KPI Dashboards']
-    },
-    {
-      title: 'Machine Learning & AI',
-      icon: Cpu,
-      color: '#078F91',
-      description: 'Supervised and unsupervised predictive models for urban traffic congestion forecasting, dynamic signal timing optimization, and pavement life-cycle deterioration.',
-      tags: ['LSTM Networks', 'XGBoost', 'Scikit-Learn', 'PCI Classifiers']
-    },
-  ];
+  const [selectedDiscipline, setSelectedDiscipline] = useState<DisciplineService>(servicesList[0]);
 
   return (
-    <section id="snapshot" className="py-12 bg-white border-b border-[#E2E8F0]">
+    <section id="snapshot" className="py-20 bg-white border-b border-[#E2E8F0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-[#E2E8F0]">
-          <div>
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#078F91]">
-              MULTIDISCIPLINARY CAPABILITIES
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0F172A] tracking-tight mt-1">
-              Quick Professional Snapshot
-            </h2>
-          </div>
-          <p className="text-xs sm:text-sm text-[#64748B] max-w-md mt-2 md:mt-0 font-mono">
-            Bridging conventional physical civil engineering principles with advanced computational data science.
-          </p>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Column: Interactive Category Cards (Inspired by Reference Layout) */}
+          <div className="lg:col-span-5 space-y-4">
+            <div className="text-xs font-mono font-bold text-[#64748B] uppercase tracking-wider mb-2 px-1">
+              SELECT CORE DISCIPLINE
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-          {cards.map((card, idx) => {
-            const Icon = card.icon;
-            return (
-              <div
-                key={card.title}
-                className="group p-5 rounded-xl bg-[#F8FAFA] hover:bg-white border border-[#E2E8F0] hover:border-[#078F91] hover:shadow-md transition-all duration-200 flex flex-col justify-between relative overflow-hidden"
-              >
-                {/* Top Accent Line */}
-                <div 
-                  className="absolute top-0 left-0 right-0 h-1 transition-all duration-200 group-hover:h-1.5"
-                  style={{ backgroundColor: card.color }}
-                ></div>
-
-                <div>
-                  <div className="w-10 h-10 rounded-lg bg-white border border-[#CBD5E1] flex items-center justify-center mb-4 shadow-2xs group-hover:scale-105 transition-transform">
-                    <Icon className="w-5 h-5 text-[#005C5C]" />
+            {servicesList.map((service) => {
+              const isSelected = selectedDiscipline.id === service.id;
+              const IconComponent = service.icon;
+              return (
+                <div
+                  key={service.id}
+                  onClick={() => setSelectedDiscipline(service)}
+                  className={`p-4 sm:p-5 rounded-2xl cursor-pointer transition-all duration-300 flex items-center justify-between border ${
+                    isSelected
+                      ? 'bg-white shadow-lg border-[#005C5C] ring-2 ring-[#005C5C]/20 -translate-x-1'
+                      : 'bg-[#F8FAFA] hover:bg-white shadow-2xs border-[#CBD5E1] hover:border-[#078F91]'
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${service.iconBg} ${service.iconColor}`}>
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm sm:text-base font-bold text-[#0F172A]">
+                        {service.title}
+                      </h3>
+                      <p className="text-xs text-[#64748B] font-mono mt-0.5">
+                        {service.projectCount}
+                      </p>
+                    </div>
                   </div>
-
-                  <h3 className="text-base font-bold text-[#0F172A] mb-2 tracking-tight group-hover:text-[#005C5C] transition-colors">
-                    {card.title}
-                  </h3>
-
-                  <p className="text-xs text-[#475569] leading-relaxed mb-4">
-                    {card.description}
-                  </p>
+                  <ArrowRight className={`w-4 h-4 transition-transform ${isSelected ? 'text-[#005C5C] translate-x-1' : 'text-gray-400'}`} />
                 </div>
+              );
+            })}
+          </div>
 
-                <div className="pt-3 border-t border-gray-200/70 flex flex-wrap gap-1.5">
-                  {card.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-white text-[#334155] border border-[#E2E8F0]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+          {/* Right Column: Dynamic Overview & Metric Grid (Inspired by Reference Layout) */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            {/* Header Narrative */}
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#005C5C]/10 text-[#005C5C] text-xs font-mono font-bold uppercase tracking-wider">
+                WHAT DO I DELIVER?
               </div>
-            );
-          })}
-        </div>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
+                What do I help?
+              </h2>
+              <p className="text-sm sm:text-base text-[#475569] leading-relaxed max-w-xl">
+                I will help you with finding constructible engineering solutions and solving transportation problems. Combining engineering physics with data intelligence to deliver resilient projects.
+              </p>
+            </div>
 
+            {/* Active Selected Discipline Feature Card */}
+            <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-[#CBD5E1] space-y-4 shadow-xs">
+              <div className="flex items-center justify-between">
+                <h4 className="text-base font-bold text-[#005C5C]">
+                  {selectedDiscipline.title} Capabilities
+                </h4>
+                <span className="text-xs font-mono text-[#078F91] font-semibold">
+                  {selectedDiscipline.projectCount}
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-[#334155] leading-relaxed">
+                {selectedDiscipline.summary}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+                {selectedDiscipline.capabilities.map((cap, i) => (
+                  <div key={i} className="flex items-center gap-2 text-xs text-[#1E293B]">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#078F91] shrink-0" />
+                    <span>{cap}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Metric Counters (Inspired by Reference Layout: 285+ Project Completed, 190+ Happy Clients) */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2 border-t border-[#E2E8F0]">
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] font-mono">97.2+<span className="text-xs font-sans text-gray-500">km</span></div>
+                <div className="text-xs text-[#64748B] font-medium mt-0.5">Trunk Corridor Designed</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#005C5C] font-mono">15+</div>
+                <div className="text-xs text-[#64748B] font-medium mt-0.5">Projects Completed</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#078F91] font-mono">3</div>
+                <div className="text-xs text-[#64748B] font-medium mt-0.5">Academic Degrees</div>
+              </div>
+              <div>
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#08B9BD] font-mono">88.4%</div>
+                <div className="text-xs text-[#64748B] font-medium mt-0.5">AI Prediction Accuracy</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
   );

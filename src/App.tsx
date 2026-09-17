@@ -3,17 +3,8 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { HeroSection } from './components/hero/HeroSection';
 import { ProfessionalSnapshot } from './components/snapshot/ProfessionalSnapshot';
-import { AboutSection } from './components/about/AboutSection';
-import { ExpertiseSection } from './components/expertise/ExpertiseSection';
-import { ProjectsSection } from './components/projects/ProjectsSection';
-import { BishoftuCaseStudy } from './components/featured/BishoftuCaseStudy';
-import { DataAndAIShowcase } from './components/featured/DataAndAIShowcase';
-import { HighwayCalculatorWidget } from './components/tools/HighwayCalculatorWidget';
-import { VisualizationSection } from './components/visualization/VisualizationSection';
-import { ExperienceSection } from './components/experience/ExperienceSection';
-import { EducationSection } from './components/education/EducationSection';
-import { ResearchSection } from './components/research/ResearchSection';
-import { FreelanceSection } from './components/freelance/FreelanceSection';
+import { PortfolioHub } from './components/hub/PortfolioHub';
+import { TestimonialsSection } from './components/testimonials/TestimonialsSection';
 import { ContactSection } from './components/contact/ContactSection';
 
 export function App() {
@@ -28,59 +19,28 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFA] text-[#0F172A] flex flex-col font-sans selection:bg-[#08B9BD]/20 selection:text-[#005C5C]">
-      {/* 1. Sticky Navigation Bar */}
+    <div className="min-h-screen bg-[#FAF9F6] text-[#0F172A] flex flex-col font-sans selection:bg-[#08B9BD]/20 selection:text-[#005C5C]">
+      {/* 1. Sticky Navigation Bar with CV Download */}
       <Navbar onOpenContactWithService={handleOpenContactWithService} />
 
       <main className="flex-1">
-        {/* 2. Hero Section with Interactive CAD/GIS Viewport */}
+        {/* 2. Inspiration-Styled Hero (Photo + Brush Aura + Official Seal + Metrics + Mini Experience) */}
         <HeroSection />
 
-        {/* 3. Quick Professional Snapshot (5 Pillar Cards) */}
+        {/* 3. 'What Do I Help?' Interactive Discipline Showcase */}
         <ProfessionalSnapshot />
 
-        {/* 4. Selected Projects Portfolio with Category Filter & Case Study Modals */}
-        <ProjectsSection />
+        {/* 4. Streamlined Interactive Portfolio Hub (Tabs & Dropdown to eliminate long-page fatigue) */}
+        <PortfolioHub onOpenContactWithService={handleOpenContactWithService} />
 
-        {/* 5. About Section ("Engineering Meets Data") */}
-        <AboutSection />
+        {/* 5. 'People Talk About Us' (Client & Project Endorsements) */}
+        <TestimonialsSection />
 
-        {/* 6. Interactive Expertise Section (5 Disciplines) */}
-        <ExpertiseSection />
-
-        {/* 7. Flagship Case Study: Bishoftu Interchange and Access Road */}
-        <BishoftuCaseStudy />
-
-        {/* 8. Interactive Highway Geometric Calculator Tool */}
-        <div className="py-12 bg-[#F8FAFA] border-b border-[#E2E8F0]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <HighwayCalculatorWidget />
-          </div>
-        </div>
-
-        {/* 9. Data & AI Section: Addis Ababa AI Traffic Management */}
-        <DataAndAIShowcase />
-
-        {/* 10. 3D Infrastructure Visualization Gallery with Lightbox */}
-        <VisualizationSection />
-
-        {/* 11. Professional Career Experience */}
-        <ExperienceSection />
-
-        {/* 12. Education & Professional Certifications */}
-        <EducationSection />
-
-        {/* 13. Research Interests & MSc/PhD Collaboration Portal */}
-        <ResearchSection onOpenContactForResearch={handleOpenContactWithService} />
-
-        {/* 14. Freelance Engineering Services & Scoping */}
-        <FreelanceSection onSelectService={handleOpenContactWithService} />
-
-        {/* 15. Final Contact Section & Opportunity Intake */}
+        {/* 6. Contact & Collaboration Intake Form */}
         <ContactSection prefilledOpportunity={contactPrefill} />
       </main>
 
-      {/* 16. Complete Professional Footer */}
+      {/* 7. Corporate Engineering Footer */}
       <Footer />
     </div>
   );

@@ -44,18 +44,18 @@ const servicesList: DisciplineService[] = [
     ]
   },
   {
-    id: '3d-viz',
-    title: '3D Visualization & Digital BIM',
-    projectCount: '3+ Projects',
+    id: 'software-bim',
+    title: 'Civil Software & BIM Automation',
+    projectCount: '4+ Tools & Repos',
     icon: Layers,
     iconBg: 'bg-[#08B9BD]/15',
     iconColor: 'text-[#005C5C]',
-    summary: 'Parametric Civil 3D corridor solids, InfraWorks contextual models, and cinematic 3D video walkthroughs for stakeholder reviews.',
+    summary: 'Custom Python scripts, LandXML parsers, and web-based civil tools (Infradigital CAD) automating survey data cleaning and corridor compliance.',
     capabilities: [
-      'Civil 3D Subassembly Composer',
-      'InfraWorks Digital Twin Modeling',
-      'Clash Detection & Clearance Reports',
-      '4K Presentation Video Renders'
+      'Infradigitalcad.com SaaS Engine',
+      'Automated Alignment & Survey Formatters',
+      'ERA Ground Slope Terrain Classifier',
+      'Mass-Haul Earthwork & BOQ Automation'
     ]
   },
   {

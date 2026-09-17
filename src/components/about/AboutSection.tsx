@@ -62,10 +62,10 @@ export const AboutSection: React.FC = () => {
                 <div className="p-3.5 rounded-lg bg-[#F8FAFA] border border-[#E2E8F0]">
                   <div className="font-bold text-[#0F172A] flex items-center gap-2 mb-1">
                     <span className="w-2 h-2 rounded-full bg-[#078F91]"></span>
-                    Civil 3D + 3D Viz
+                    Civil 3D + Automation
                   </div>
                   <p className="text-[#64748B]">
-                    Converting parametric corridor cross-sections into photorealistic 3D models for BIM coordination and stakeholder validation.
+                    Developing algorithmic Python formatters and Infradigital CAD tools to automate survey cleaning and geometric compliance.
                   </p>
                 </div>
 
@@ -109,7 +109,7 @@ export const AboutSection: React.FC = () => {
                   </div>
                   <div>
                     <span className="font-bold text-[#0F172A] block">Highway Engineering Excellence</span>
-                    <span>Geometric design of trunk highways, roundabouts, and interchanges per AASHTO / ERA manuals.</span>
+                    <span>Geometric design of trunk highways, roundabouts, and corridors per AASHTO / ERA manuals.</span>
                   </div>
                 </div>
 
@@ -119,7 +119,7 @@ export const AboutSection: React.FC = () => {
                   </div>
                   <div>
                     <span className="font-bold text-[#0F172A] block">Digital Infrastructure & BIM</span>
-                    <span>Corridor solids, surface grading, subassembly design, and 3D visual communication.</span>
+                    <span>Parametric corridor modeling, surface grading, subassembly design, and LandXML automation.</span>
                   </div>
                 </div>
 

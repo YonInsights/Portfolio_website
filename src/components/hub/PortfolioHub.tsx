@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Sparkles, FolderGit2, Calculator, GraduationCap, Briefcase, ChevronDown, Eye } from 'lucide-react';
+import { Sparkles, FolderGit2, Calculator, GraduationCap, Briefcase, ChevronDown, Eye, Code2, Building2 } from 'lucide-react';
 
 import { BishoftuCaseStudy } from '../featured/BishoftuCaseStudy';
 import { DataAndAIShowcase } from '../featured/DataAndAIShowcase';
-import { VisualizationSection } from '../visualization/VisualizationSection';
+import { RepositoriesSection } from '../repositories/RepositoriesSection';
 import { ProjectsSection } from '../projects/ProjectsSection';
 import { HighwayCalculatorWidget } from '../tools/HighwayCalculatorWidget';
 import { EducationSection } from '../education/EducationSection';
@@ -17,17 +17,19 @@ interface PortfolioHubProps {
   onOpenContactWithService: (serviceName: string) => void;
 }
 
-type HubTab = 'featured' | 'projects' | 'calculator' | 'education' | 'services' | 'all';
+type HubTab = 'featured' | 'repositories' | 'projects' | 'calculator' | 'experience' | 'education' | 'services' | 'all';
 
 export const PortfolioHub: React.FC<PortfolioHubProps> = ({ onOpenContactWithService }) => {
   const [activeTab, setActiveTab] = useState<HubTab>('featured');
 
   const tabs: { id: HubTab; label: string; icon: React.ElementType; badge?: string }[] = [
     { id: 'featured', label: 'Featured Showcases', icon: Sparkles, badge: 'Flagship' },
+    { id: 'repositories', label: 'Codebases & Repos (8)', icon: Code2, badge: 'Open Source' },
     { id: 'projects', label: 'All Projects (15+)', icon: FolderGit2 },
     { id: 'calculator', label: 'Geometric Calculator', icon: Calculator, badge: 'Tool' },
+    { id: 'experience', label: 'Work Experience', icon: Building2, badge: 'EEC / Infradigital' },
     { id: 'education', label: 'Degrees & Research', icon: GraduationCap },
-    { id: 'services', label: 'Freelance & Consulting', icon: Briefcase },
+    { id: 'services', label: 'Consulting & Freelance', icon: Briefcase },
     { id: 'all', label: 'Full Detailed View', icon: Eye }
   ];
 
@@ -50,7 +52,7 @@ export const PortfolioHub: React.FC<PortfolioHubProps> = ({ onOpenContactWithSer
           </div>
 
           {/* Desktop Tab Selector */}
-          <div className="hidden lg:flex items-center gap-1.5 bg-[#F1F5F9] p-1.5 rounded-xl border border-[#CBD5E1]">
+          <div className="hidden xl:flex items-center gap-1.5 bg-[#F1F5F9] p-1.5 rounded-xl border border-[#CBD5E1]">
             {tabs.map((tab) => {
               const IconComp = tab.icon;
               const isActive = activeTab === tab.id;
@@ -78,8 +80,8 @@ export const PortfolioHub: React.FC<PortfolioHubProps> = ({ onOpenContactWithSer
             })}
           </div>
 
-          {/* Mobile & Tablet Dropdown Selector (User-Requested Dropdown Simplification) */}
-          <div className="lg:hidden relative">
+          {/* Mobile & Tablet Dropdown Selector */}
+          <div className="xl:hidden relative">
             <label htmlFor="hub-dropdown" className="sr-only">Select Portfolio Section</label>
             <div className="relative">
               <select
@@ -88,10 +90,12 @@ export const PortfolioHub: React.FC<PortfolioHubProps> = ({ onOpenContactWithSer
                 onChange={(e) => setActiveTab(e.target.value as HubTab)}
                 className="w-full appearance-none px-4 py-2.5 pr-10 rounded-xl bg-[#F8FAFA] border-2 border-[#005C5C] text-xs font-bold text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#005C5C]/20 shadow-xs"
               >
-                <option value="featured">⭐ Featured Showcases (Bishoftu, AI Traffic, 3D)</option>
+                <option value="featured">⭐ Featured Showcases (Infradigital CAD, Bishoftu, AI Traffic)</option>
+                <option value="repositories">💻 Codebases & Repositories (8 Open-Source Tools)</option>
                 <option value="projects">📁 All Projects & Case Studies (15+)</option>
                 <option value="calculator">📐 AASHTO / ERA Highway Geometric Calculator</option>
-                <option value="education">🎓 Academic Degrees, Certifications & Research</option>
+                <option value="experience">🏢 Work Experience (Ethiopian Engineering Corp, Infradigital CAD, Omega)</option>
+                <option value="education">🎓 Academic Degrees, Certifications & Research Proposals</option>
                 <option value="services">💼 Freelance Services & Consulting Packages</option>
                 <option value="all">🌐 Full View (All Sections Expanded)</option>
               </select>
@@ -110,30 +114,38 @@ export const PortfolioHub: React.FC<PortfolioHubProps> = ({ onOpenContactWithSer
           <div>
             <BishoftuCaseStudy />
             <DataAndAIShowcase />
-            <VisualizationSection />
           </div>
         )}
 
-        {/* Tab 2: All Projects & Case Studies */}
+        {/* Tab 2: Codebases & Repositories */}
+        {(activeTab === 'repositories' || activeTab === 'all') && (
+          <RepositoriesSection />
+        )}
+
+        {/* Tab 3: All Projects & Case Studies */}
         {(activeTab === 'projects' || activeTab === 'all') && (
           <ProjectsSection />
         )}
 
-        {/* Tab 3: Interactive Calculator Tool */}
+        {/* Tab 4: Interactive Calculator Tool */}
         {(activeTab === 'calculator' || activeTab === 'all') && (
           <HighwayCalculatorWidget />
         )}
 
-        {/* Tab 4: Education, Certifications & Research */}
+        {/* Tab 5: Work Experience */}
+        {(activeTab === 'experience' || activeTab === 'all') && (
+          <ExperienceSection />
+        )}
+
+        {/* Tab 6: Education, Certifications & Research */}
         {(activeTab === 'education' || activeTab === 'all') && (
           <div>
             <EducationSection />
-            <ExperienceSection />
             <ResearchSection onOpenContactForResearch={onOpenContactWithService} />
           </div>
         )}
 
-        {/* Tab 5: Freelance & Consulting Services */}
+        {/* Tab 7: Freelance & Consulting Services */}
         {(activeTab === 'services' || activeTab === 'all') && (
           <div>
             <ExpertiseSection />
@@ -151,3 +163,4 @@ export const PortfolioHub: React.FC<PortfolioHubProps> = ({ onOpenContactWithSer
     </div>
   );
 };
+

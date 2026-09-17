@@ -164,6 +164,18 @@ export const HeroSection: React.FC = () => {
                 </a>
               </div>
 
+              {/* Ethiopian Engineering Corporation (Current) */}
+              <div className="p-3 rounded-xl bg-white border border-[#08B9BD]/50 hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
+                <div>
+                  <div className="text-xs font-bold text-[#0F172A]">Highway Engineer</div>
+                  <div className="text-[11px] text-[#005C5C] font-semibold">Ethiopian Engineering Corporation</div>
+                  <div className="text-[10px] text-gray-500 font-mono">Governmental Trunk & Link Corridors</div>
+                </div>
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#005C5C] text-white shrink-0">
+                  Current
+                </span>
+              </div>
+
               {/* Infradigital CAD */}
               <div className="p-3 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
                 <div>
@@ -176,27 +188,15 @@ export const HeroSection: React.FC = () => {
                 </span>
               </div>
 
-              {/* Experience Item 1 */}
+              {/* Omega Consulting Engineers */}
               <div className="p-3 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
                 <div>
-                  <div className="text-xs font-bold text-[#0F172A]">Highway Design Engineer</div>
-                  <div className="text-[11px] text-[#078F91] font-medium">Omega Consulting Engineers Plc</div>
+                  <div className="text-xs font-bold text-[#0F172A]">Highway Engineer</div>
+                  <div className="text-[11px] text-[#078F91] font-medium">Omega Consulting Engineers Plc.</div>
                   <div className="text-[10px] text-gray-500 font-mono">Jimma Airport to Bosona Corridor</div>
                 </div>
-                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#005C5C]/10 text-[#005C5C] shrink-0">
-                  Present
-                </span>
-              </div>
-
-              {/* Experience Item 2 */}
-              <div className="p-3 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
-                <div>
-                  <div className="text-xs font-bold text-[#0F172A]">Jr. Highway Design Engineer</div>
-                  <div className="text-[11px] text-[#078F91] font-medium">Best Consulting Engineers PLC</div>
-                  <div className="text-[10px] text-gray-500 font-mono">Harar-Kombolcha Road (97.22 km)</div>
-                </div>
                 <span className="px-2 py-0.5 rounded text-[10px] font-mono text-gray-500 bg-gray-100 shrink-0">
-                  2023–25
+                  2025
                 </span>
               </div>
 

@@ -2,9 +2,60 @@ import type { Project } from "../types";
 
 export const projectsData: Project[] = [
   {
-    "id": "bishoftu-interchange",
-    "slug": "bishoftu-interchange-and-access-road",
-    "title": "Design of Bishoftu Interchange and Access Road",
+    id: "infradigital-cad",
+    slug: "infradigital-cad-highway-automation-suite",
+    title: "Infradigital CAD: Web-Based Highway Design & BIM Automation Suite",
+    category: "data",
+    subcategory: "Highway Design Software & BIM Automation",
+    shortDescription: "Custom-engineered web application (Infradigitalcad.com) automating horizontal/vertical alignment formatting, ERA terrain classification, superelevation computations, and earthwork audits for civil engineers.",
+    tools: [
+      "Full-Stack Web App",
+      "Python / Flask",
+      "AutoCAD Civil 3D API",
+      "ERA Design Manuals",
+      "AASHTO Guidelines",
+      "TypeScript / React"
+    ],
+    role: "Founder, Lead Highway Technologist & Full-Stack Developer",
+    keyDeliverable: "Live SaaS Platform (Infradigitalcad.com), Alignment Data Formatters, Terrain Classifiers & Automated CAD Scripts",
+    featured: true,
+    svgBadge: "civil3d",
+    caseStudy: {
+      overview: "Infradigital CAD (infradigitalcad.com) is an engineering assistant and automation platform developed by Yonatan Abrham to streamline the repetitive, error-prone tasks in highway alignment drafting, terrain categorization, and quantity verification.",
+      problemContext: "Civil engineers spend hundreds of hours manually reformatting total station/GPS coordinate survey data, checking curve compliance against ERA/AASHTO manuals, and computing cross-section earthwork volumes in spreadsheets.",
+      myRole: "Conceived, engineered, and launched the full platform from scratch: programmed the geometric calculation engines, built the web interface, implemented ERA/AASHTO standard rule-checkers, and integrated direct CSV/DXF CAD export pipelines.",
+      methodology: [
+        "Engineered algorithmic alignment data formatters that structure raw chainage coordinates for instant Civil 3D and AutoCAD importing.",
+        "Built automated ERA terrain classification algorithms calculating transverse ground slope percentages across corridor corridors.",
+        "Implemented AASHTO & ERA superelevation runoff solvers computing transition lengths and maximum side friction factors.",
+        "Developed cloud-accessible civil engineering utilities that eliminate cross-sheet transcription errors."
+      ],
+      softwareTools: [
+        "Infradigitalcad.com Live Web Engine",
+        "Python (Scientific Algorithms, Geometry Processing)",
+        "AutoCAD Civil 3D Scripting & Data Pipelines",
+        "React & Tailwind CSS (Frontend Engineering Interface)"
+      ],
+      engineeringProcess: [
+        "Phase 1: Identification of road design bottleneck workflows from consulting practice.",
+        "Phase 2: Mathematical formulation of alignment data structuring and terrain algorithms.",
+        "Phase 3: Web platform development, responsive CAD data table parser, and validation engine.",
+        "Phase 4: Deployment on cloud infrastructure and testing with professional highway designers."
+      ],
+      keyOutputs: [
+        "Live Production Web Platform at Infradigitalcad.com",
+        "Automated Alignment Formatter (Horizontal & Vertical)",
+        "ERA Ground Slope Terrain Classifier & Road Sign Layout Generator",
+        "Interactive Superelevation & Sight Distance Calculation Suite"
+      ],
+      results: "Reduces alignment data preparation time by over 80% and provides practicing civil engineers and consulting firms with instantaneous, standards-compliant verification tools.",
+      lessonsLearned: "Bridging software development with deep civil engineering domain knowledge produces high-impact tools that directly eliminate industrial friction in infrastructure delivery."
+    }
+  },
+  {
+    id: "bishoftu-interchange",
+    slug: "bishoftu-interchange-and-access-road",
+    title: "Design of Bishoftu Interchange and Access Road",
     "category": "highway",
     "subcategory": "Geometric Highway Design & BOQ",
     "shortDescription": "Full geometric design, corridor modeling, hydraulic drainage sizing, and quantity takeoff for a multi-leg highway interchange and connecting arterial access road.",

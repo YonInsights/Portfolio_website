@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Download, Mail, Award, ChevronRight } from 'lucide-react';
+import { ArrowRight, Download, Mail, ExternalLink, Zap, ChevronRight } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   return (
@@ -10,13 +10,13 @@ export const HeroSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
           
-          {/* Left Column: Introduction & Primary Numbers */}
+          {/* Left Column: Introduction & Core Value Proposition */}
           <div className="lg:col-span-4 space-y-6">
             
             {/* Top Eyebrow Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#005C5C]/10 border border-[#005C5C]/20 text-[#005C5C] text-xs font-mono font-bold tracking-wider uppercase">
               <span className="w-2 h-2 rounded-full bg-[#08B9BD] animate-pulse"></span>
-              <span>CIVIL / HIGHWAY ENGINEER + DATA SCIENTIST</span>
+              <span>HIGHWAY DESIGN + DATA SCIENCE + PROJECT MANAGEMENT</span>
             </div>
 
             {/* Main Greeting Headline */}
@@ -25,51 +25,71 @@ export const HeroSection: React.FC = () => {
                 Hey There,<br />
                 <span className="text-[#005C5C]">I'm Yonatan</span>
               </h1>
-              <a 
-                href="mailto:email2yonatan@gmail.com" 
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#078F91] hover:text-[#005C5C] hover:underline pt-1"
-              >
-                <Mail className="w-4 h-4" />
-                <span>email2yonatan@gmail.com</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-3 pt-1 text-xs sm:text-sm">
+                <a 
+                  href="mailto:email2yonatan@gmail.com" 
+                  className="inline-flex items-center gap-1.5 font-semibold text-[#078F91] hover:text-[#005C5C] hover:underline"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>email2yonatan@gmail.com</span>
+                </a>
+                <span className="text-gray-300">|</span>
+                <a 
+                  href="https://www.linkedin.com/in/yonatan-abrham1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-[#005C5C] hover:underline"
+                >
+                  <span>LinkedIn Profile</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
             </div>
 
-            {/* Quick Metrics (Inspired by the Reference Layout) */}
-            <div className="grid grid-cols-2 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-white border border-[#CBD5E1] shadow-xs">
-                <div className="text-3xl font-extrabold text-[#005C5C] font-mono">5+</div>
-                <div className="text-xs text-[#64748B] font-medium mt-0.5">Years Combined Engineering & Data Practice</div>
+            {/* Unique Business Value Statement */}
+            <p className="text-xs sm:text-sm text-[#334155] leading-relaxed">
+              I help engineering consultancies, contractors, and agencies <strong>accelerate highway design by 80%</strong>, automate earthwork quantity audits, and deliver zero-rework infrastructure by bridging <strong>Civil 3D geometric design</strong> with <strong>custom AI automation</strong> and <strong>rigorous project management</strong>.
+            </p>
+
+            {/* Quick Metrics */}
+            <div className="grid grid-cols-2 gap-4 pt-1">
+              <div className="p-3.5 rounded-2xl bg-white border border-[#CBD5E1] shadow-xs">
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#005C5C] font-mono">80%</div>
+                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Faster CAD & Alignment Formatting</div>
               </div>
-              <div className="p-4 rounded-2xl bg-white border border-[#CBD5E1] shadow-xs">
-                <div className="text-3xl font-extrabold text-[#078F91] font-mono">15+</div>
-                <div className="text-xs text-[#64748B] font-medium mt-0.5">Infrastructure & ML Projects Completed</div>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#CBD5E1] shadow-xs">
+                <div className="text-2xl sm:text-3xl font-extrabold text-[#078F91] font-mono">97.2+<span className="text-xs font-sans text-gray-500">km</span></div>
+                <div className="text-[11px] text-[#64748B] font-medium mt-0.5">Trunk Highway Corridor Delivered</div>
               </div>
             </div>
 
             {/* Primary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <a
                 href="/Yonatan_Abrham_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Yonatan_Abrham_CV.pdf"
-                className="px-5 py-3 rounded-xl bg-[#005C5C] text-white font-semibold text-xs sm:text-sm hover:bg-[#078F91] shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2 border border-[#08B9BD]/30"
+                className="px-4 py-2.5 rounded-xl bg-[#005C5C] text-white font-semibold text-xs sm:text-sm hover:bg-[#078F91] shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-2 border border-[#08B9BD]/30"
               >
                 <Download className="w-4 h-4 text-[#08B9BD]" />
-                <span>Download CV (PDF)</span>
+                <span>Download CV</span>
               </a>
               <a
-                href="#hub"
-                className="px-5 py-3 rounded-xl bg-white text-[#005C5C] font-semibold text-xs sm:text-sm hover:bg-[#005C5C]/5 border-2 border-[#005C5C] shadow-2xs transition-all duration-200 flex items-center gap-2"
+                href="https://infradigitalcad.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 rounded-xl bg-[#08B9BD]/15 text-[#003838] font-bold text-xs sm:text-sm hover:bg-[#08B9BD]/25 border border-[#08B9BD]/40 transition-all duration-200 flex items-center gap-1.5"
               >
-                <span>Explore Works</span>
-                <ArrowRight className="w-4 h-4" />
+                <Zap className="w-4 h-4 text-[#005C5C]" />
+                <span>Infradigital CAD Tool</span>
+                <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
 
           </div>
 
-          {/* Center Column: Portrait with Teal Brush Aura & Official Stamp */}
+          {/* Center Column: Portrait with Teal Brush Aura & Value Badge */}
           <div className="lg:col-span-4 flex flex-col items-center justify-center relative py-4">
             
             {/* Artistic Splash Backdrop */}
@@ -91,14 +111,15 @@ export const HeroSection: React.FC = () => {
                 />
               </div>
 
-              {/* Official Seal / Certification Badge (Inspired by Reference Layout) */}
-              <div className="absolute -bottom-3 -right-2 sm:-right-4 z-20 bg-white p-2.5 sm:p-3 rounded-2xl shadow-xl border border-[#CBD5E1] flex items-center gap-2 max-w-[170px]">
-                <div className="w-9 h-9 rounded-xl bg-[#005C5C] text-[#08B9BD] flex items-center justify-center shrink-0 shadow-xs">
-                  <Award className="w-5 h-5" />
+              {/* Unique Business Value Badge (Replacing Generic Stamp) */}
+              <div className="absolute -bottom-4 -right-2 sm:-right-4 z-20 bg-white p-3 rounded-2xl shadow-xl border border-[#CBD5E1] flex items-center gap-2.5 max-w-[200px]">
+                <div className="w-10 h-10 rounded-xl bg-[#005C5C] text-[#08B9BD] flex items-center justify-center shrink-0 shadow-xs">
+                  <Zap className="w-5 h-5" />
                 </div>
                 <div className="leading-tight">
-                  <div className="text-[10px] font-mono font-bold text-[#0F172A] uppercase tracking-tighter">ERA & AASHTO</div>
-                  <div className="text-[9px] text-[#078F91] font-semibold">Certified Highway Engineer & Data Scientist</div>
+                  <div className="text-[10px] font-mono font-bold text-[#0F172A] uppercase tracking-tight">INFRADIGITAL CAD</div>
+                  <div className="text-[10px] text-[#078F91] font-bold">Highway Design + AI + Project Governance</div>
+                  <div className="text-[8px] text-gray-500 font-mono">80% Faster Design Cycles</div>
                 </div>
               </div>
 
@@ -106,33 +127,57 @@ export const HeroSection: React.FC = () => {
 
           </div>
 
-          {/* Right Column: Narrative & Work Experience Timeline Snapshot */}
-          <div className="lg:col-span-4 space-y-5">
+          {/* Right Column: Value Pillars & Work Experience Timeline */}
+          <div className="lg:col-span-4 space-y-4">
             
-            {/* Supporting Bio Card */}
-            <div className="p-5 rounded-2xl bg-white border border-[#CBD5E1] shadow-xs space-y-2">
+            {/* 3 Core Value Pillars */}
+            <div className="p-4 rounded-2xl bg-white border border-[#CBD5E1] shadow-xs space-y-2.5">
               <div className="text-xs font-mono font-bold text-[#078F91] uppercase tracking-wider">
-                DESIGN PHILOSOPHY
+                HOW I HELP YOUR BUSINESS
               </div>
-              <p className="text-xs sm:text-sm text-[#334155] leading-relaxed">
-                I engineer resilient highway corridors and develop predictive data science systems, connecting geometric road design with machine learning.
-              </p>
+              
+              <div className="space-y-2 text-xs text-[#334155]">
+                <div className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#005C5C] mt-1.5 shrink-0"></span>
+                  <span><strong>Design Automation:</strong> Infradigital CAD tools structure alignments and classify terrain instantly.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#078F91] mt-1.5 shrink-0"></span>
+                  <span><strong>Cost & Risk Reduction:</strong> Machine learning mass-haul and pavement models prevent budget blowouts.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#08B9BD] mt-1.5 shrink-0"></span>
+                  <span><strong>End-to-End Delivery:</strong> MA in Project Management ensuring contractor alignment and zero rework.</span>
+                </div>
+              </div>
             </div>
 
-            {/* Mini Experience Timeline (Inspired by the Reference Layout) */}
-            <div className="space-y-2.5">
+            {/* Mini Experience Timeline */}
+            <div className="space-y-2">
               <div className="flex items-center justify-between px-1">
                 <span className="text-xs font-mono font-bold text-[#0F172A] uppercase tracking-wider">
-                  Work Experience
+                  Career Highlights
                 </span>
                 <a href="#hub" className="text-[11px] font-semibold text-[#005C5C] hover:underline flex items-center">
-                  <span>View All</span>
+                  <span>View Details</span>
                   <ChevronRight className="w-3 h-3" />
                 </a>
               </div>
 
+              {/* Infradigital CAD */}
+              <div className="p-3 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
+                <div>
+                  <div className="text-xs font-bold text-[#0F172A]">Founder & Lead Technologist</div>
+                  <div className="text-[11px] text-[#078F91] font-medium">Infradigital CAD (infradigitalcad.com)</div>
+                  <div className="text-[10px] text-gray-500 font-mono">Highway Automation & BIM Platform</div>
+                </div>
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#08B9BD]/20 text-[#003838] shrink-0">
+                  Live SaaS
+                </span>
+              </div>
+
               {/* Experience Item 1 */}
-              <div className="p-3.5 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
+              <div className="p-3 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
                 <div>
                   <div className="text-xs font-bold text-[#0F172A]">Highway Design Engineer</div>
                   <div className="text-[11px] text-[#078F91] font-medium">Omega Consulting Engineers Plc</div>
@@ -144,19 +189,7 @@ export const HeroSection: React.FC = () => {
               </div>
 
               {/* Experience Item 2 */}
-              <div className="p-3.5 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
-                <div>
-                  <div className="text-xs font-bold text-[#0F172A]">Highway Design Engineer</div>
-                  <div className="text-[11px] text-[#078F91] font-medium">Meteoric Engineering Consultant PLC</div>
-                  <div className="text-[10px] text-gray-500 font-mono">Highway Corridor Studies & ESIA</div>
-                </div>
-                <span className="px-2 py-0.5 rounded text-[10px] font-mono text-gray-500 bg-gray-100 shrink-0">
-                  2025
-                </span>
-              </div>
-
-              {/* Experience Item 3 */}
-              <div className="p-3.5 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
+              <div className="p-3 rounded-xl bg-white border border-[#CBD5E1] hover:border-[#005C5C] transition-colors shadow-2xs flex items-start justify-between gap-2">
                 <div>
                   <div className="text-xs font-bold text-[#0F172A]">Jr. Highway Design Engineer</div>
                   <div className="text-[11px] text-[#078F91] font-medium">Best Consulting Engineers PLC</div>

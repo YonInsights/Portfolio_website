@@ -2,6 +2,32 @@ import type { ExperiencePosition } from "../types";
 
 export const experienceData: ExperiencePosition[] = [
   {
+    id: "exp-0",
+    organization: "Infradigital CAD (infradigitalcad.com)",
+    role: "Founder & Lead Infrastructure Technologist",
+    period: "2024 – Present",
+    location: "Addis Ababa, Ethiopia / Cloud Platform",
+    status: "Present",
+    responsibilities: [
+      "Engineered and launched Infradigitalcad.com, a web-based highway design and BIM automation platform used by civil engineers to accelerate drafting and calculations.",
+      "Developed algorithmic horizontal and vertical alignment formatters that clean and structure raw survey coordinates for instant CAD import.",
+      "Programmed automated ERA terrain slope classifiers, superelevation runoff solvers, and earthwork validation utilities adhering to ERA/AASHTO standards.",
+      "Integrated full-stack engineering interfaces with Python computational geometry engines, cutting design turnaround times by up to 80%."
+    ],
+    keyProjectInvolvement: [
+      "Infradigital CAD Highway Automation Web Suite",
+      "Automated Alignment Formatter & Data Cleaning Tool",
+      "ERA Ground Slope Terrain Classifier & Road Sign Generator"
+    ],
+    toolsUsed: [
+      "Python",
+      "AutoCAD Civil 3D",
+      "Full-Stack Web Architecture",
+      "ERA Design Manuals",
+      "AASHTO Guidelines"
+    ]
+  },
+  {
     id: "exp-1",
     organization: "Omega Consulting Engineers Plc",
     role: "Highway Design Engineer",
